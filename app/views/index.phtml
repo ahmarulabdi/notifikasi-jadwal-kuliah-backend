@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Jadwal Kuliah TI UNIKS</title>
+    <link rel="stylesheet" href="<?= $this->url->getStatic('bootstrap/css/bootstrap.min.css') ?>">
+    <link type="text/css" href="<?= $this->url->getStatic('DataTables/css/dataTables.bootstrap.min.css') ?>"/>
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo $this->url->get('img/favicon.ico') ?>"/>
+</head>
+<body>
+<div class="container">
+    <?php if ($this->session->get("users")): ?>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" >Jadwal Kuliah TI UNIKS</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <?php include  "layouts/nav_item.php" ?>
+                </ul>
+
+            </div>
+        </nav>
+    <?php endif; ?>
+    <?php echo $this->getContent(); ?>
+
+
+    <div class="modal fade" id="modalLogout" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="<?= $this->url->get('session/logout') ?>" method="post">
+                    <div class="modal-header">
+                        <h4 class="modal-title">
+                            Konfirmasi
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <strong>
+                            Apakah anda ingin logout?
+                        </strong>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Ya</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="<?= $this->url->getStatic('bootstrap/js/jquery-3.2.1.min.js') ?>"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="<?= $this->url->getStatic('bootstrap/js/bootstrap.min.js') ?>"></script>
+<script src="<?= $this->url->getStatic('DataTables/js/jquery.dataTables.min.js') ?>"></script>
+<script src="<?= $this->url->getStatic('DataTables/js/dataTables.bootstrap.min.js') ?>"></script>
+<script>
+    $(document).ready(function () {
+        $('.dataTable').DataTable();
+    });
+</script>
+</body>
+</html>

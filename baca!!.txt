@@ -1,0 +1,6 @@
+setting db di app/config/config.php
+controller dengan awalan web, ex : WebFooBarController.php -> adalah controller untuk webapps
+controller tanpa awalan web, untuk restAPI
+panggil class JSON::set(<< array >>) , agar response content jadi JSON
+
+selamat memasak aplikasi.

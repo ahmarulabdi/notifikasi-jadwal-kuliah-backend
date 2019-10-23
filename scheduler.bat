@@ -1,0 +1,1 @@
+schtasks /Create /TN notif-harian /TR D:\xampp\htdocs\phalcon\notifikasi_jadwal_kuliah\cronjob.bat /SC DAILY /ST 07:50

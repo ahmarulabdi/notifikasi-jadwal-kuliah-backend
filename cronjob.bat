@@ -1,0 +1,1 @@
+curl http://localhost/phalcon/notifikasi_jadwal_kuliah/cron/getusers
